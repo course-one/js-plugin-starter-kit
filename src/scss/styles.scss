@@ -1,0 +1,13 @@
+// plugin level css
+.users-list{
+    width: 400px;
+    min-height: 200px;
+    border-radius: 3px;
+    background-color: #fff;
+    padding: 15px 30px;
+    list-style-type: none;
+
+    >li{
+        line-height: 30px;
+    }
+}

@@ -1,8 +1,8 @@
 // import dependencies
 import { concat } from '../util/string';
 
-// return User class
-export class User{
+// return UserList class
+export class UserList{
     constructor(elem, users){
         this.elem = elem;
         this.users = users;

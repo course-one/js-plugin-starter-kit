@@ -1,8 +1,9 @@
 // import `.scss` files
-import './scss/main.scss';
+import './scss/styles.scss';
 
-// import User class
-import { User } from './lib/user';
+// import UserList class
+import { UserList as defaultExport } from './lib/user-list';
 
-// export default User class
-export default User;
+// export default UserList class
+// I used `defaultExport` to state that variable name doesn't matter
+export default defaultExport;
