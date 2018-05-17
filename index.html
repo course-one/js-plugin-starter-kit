@@ -1,0 +1,35 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>User Application</title>
+    </head>
+    <body>
+        <div id="app"></div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function(){
+                var elem = document.getElementById('app');
+
+                let instance = new User(elem, [
+                    {firstname: 'Ross', lastname: 'Geller'},
+                    {firstname: 'Monica', lastname: 'Geller'},
+                    {firstname: 'Chandler', lastname: 'Bing'},
+                    {firstname: 'Joey', lastname: 'Tribbiani'},
+                ]);
+
+                // initialize
+                instance.init();
+
+                // add new users
+                setTimeout(function(){
+                    instance.addUser({firstname: 'Rachel', lastname: 'Green'});
+                }, 2000);
+                setTimeout(function(){
+                    instance.addUser({firstname: 'Phoebe', lastname: 'Buffay'});
+                }, 4000);
+            });
+        </script>
+    </body>
+</html>
