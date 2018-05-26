@@ -10,7 +10,8 @@ module.exports = {
         libraryTarget: 'umd',
         libraryExport: 'default',
         path: path.resolve(__dirname, 'dist'),
-        filename: 'index.js'
+        filename: 'index.js',
+        publicPath: '/'
     },
     module: {
         rules: [
@@ -31,5 +32,8 @@ module.exports = {
             template: path.resolve(__dirname, 'index.html')
         }),
         new webpack.HotModuleReplacementPlugin(),
-    ]
+    ],
+    devServer: {
+        historyApiFallback: true
+    }
 };
