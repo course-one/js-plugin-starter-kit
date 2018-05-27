@@ -2,6 +2,24 @@ const path = require('path');
 const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const uglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const config = require('config');
+
+/*-------------------------------------------------*/
+
+let plugins = [
+    new HTMLWebpackPlugin({
+        template: path.resolve(__dirname, 'index.html')
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+];
+
+if( config.get('uglify') ) {
+    plugins.push( new uglifyJsPlugin( {
+        sourceMap: config.get('sourcemap')
+    } ) );
+}
+
+/*-------------------------------------------------*/
 
 module.exports = {
     entry: './src/index.js',
@@ -11,7 +29,7 @@ module.exports = {
         libraryExport: 'default',
         path: path.resolve(__dirname, 'dist'),
         filename: 'index.js',
-        publicPath: '/'
+        publicPath: config.get('publicPath')
     },
     module: {
         rules: [
@@ -26,14 +44,9 @@ module.exports = {
             }
         ]
     },
-    plugins: [
-        new uglifyJsPlugin(),
-        new HTMLWebpackPlugin({
-            template: path.resolve(__dirname, 'index.html')
-        }),
-        new webpack.HotModuleReplacementPlugin(),
-    ],
+    plugins: plugins,
     devServer: {
-        historyApiFallback: true
+        historyApiFallback: true,
+        open: config.get('open')
     }
 };

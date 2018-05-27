@@ -5,8 +5,8 @@
   "description": "VanillaJS plugin starter using Webpack",
   "main": "dist/index.js",
   "scripts": {
-    "build": "webpack",
-    "start": "webpack-dev-server --open"
+    "build": "NODE_ENV=production webpack",
+    "start": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
+    "config": "^1.30.0",
     "css-loader": "^0.28.11",
     "cssnano": "^3.10.0",
     "html-webpack-plugin": "^3.2.0",
