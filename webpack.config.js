@@ -10,7 +10,7 @@ module.exports = {
     mode: ( process.env.NODE_ENV ? process.env.NODE_ENV : 'development' ),
 
     // entry file(s)
-    entry: './src/index.js',
+    entry: './src/index.ts',
 
     // output file(s) and chunks
     output: {
@@ -21,10 +21,19 @@ module.exports = {
         filename: 'index.js',
         publicPath: config.get('publicPath')
     },
+    
+    resolve: {
+        extensions: [ '.js', '.ts', '.scss' ]
+    },
 
     // module/loaders configuration
     module: {
         rules: [
+            {
+                test: /\.ts$/,
+                exclude: /node_modules/,
+                use: ['babel-loader', 'ts-loader']
+            },
             {
                 test: /\.js$/,
                 exclude: /node_modules/,

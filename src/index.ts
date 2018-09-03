@@ -1,5 +1,5 @@
 // import `.scss` files
-import './scss/styles.scss';
+import './scss/styles';
 
 // import UserList class
 import { UserList as defaultExport } from './lib/user-list';

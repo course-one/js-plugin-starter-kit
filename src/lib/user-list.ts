@@ -3,11 +3,14 @@ import { concat } from '../util/string';
 
 // return UserList class
 export class UserList{
-    constructor(elem, users){
+    public elem: HTMLElement;
+    public users: any[];
+    public initialized: Boolean = false;
+    public ul: HTMLElement = null;
+
+    constructor(elem: HTMLElement, users: any[]){
         this.elem = elem;
         this.users = users;
-
-        this.initialized = false;
     }
 
     // initialize plugin
@@ -26,17 +29,17 @@ export class UserList{
     }
 
     // get fullname of the user
-    getUserFullName( user ) {
+    getUserFullName( user: any ): string {
         return concat( user.firstname, user.lastname );
     }
 
     // get list of users with fullname
-    getUsers() {
+    getUsers(): any[] {
         return this.users.map( user => this.getUserFullName( user ) );
     }
 
     // return `li` element with user fullname
-    getUserLi( fullname ) {
+    getUserLi( fullname: string ): HTMLElement {
        let li = document.createElement( 'li' );
        li.innerText = fullname;
 
@@ -44,7 +47,7 @@ export class UserList{
     }
 
     // append `li` element to the users `ul` element
-    appendLi( li ) {
+    appendLi( li: HTMLElement ) {
         this.ul.appendChild( li );
     }
 
