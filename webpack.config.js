@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const config = require('config');
 
@@ -7,7 +6,7 @@ const config = require('config');
 
 module.exports = {
     // webpack optimization mode
-    mode: ( process.env.NODE_ENV ? process.env.NODE_ENV : 'development' ),
+    mode: (process.env.NODE_ENV ? process.env.NODE_ENV : 'development'),
 
     // entry file(s)
     entry: './src/index.js',
@@ -28,7 +27,12 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                use: ['babel-loader']
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
             },
             {
                 test: /\.scss$/,
@@ -45,7 +49,7 @@ module.exports = {
 
     // development server configuration
     devServer: {
-        
+
         // must be `true` for SPAs
         historyApiFallback: true,
 
@@ -54,5 +58,5 @@ module.exports = {
     },
 
     // generate source map
-    devtool: ( 'production' === process.env.NODE_ENV ? 'source-map' : 'cheap-module-eval-source-map' ),
+    devtool: ('production' === process.env.NODE_ENV ? 'source-map' : 'cheap-module-eval-source-map'),
 };
