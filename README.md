@@ -1,15 +1,22 @@
 # js-plugin-starter
-VanillaJS plugin starter with Webpack
+VanillaJS (_pure JavaScript_) plugin starter with **Webpack 4** and **Babel 7**.
 
-# Clone this repo
+# Clone this repository
 ```
-npx gclone thatisuday/js-plugin-starter [dir]
+git clone  -b webpack-4-babel-7 https://github.com/thatisuday/js-plugin-starter.git [dest]
 ```
-Use `npx` to use `gclone` on run-time or `npm install -g gclone`. This will copy this repository with `.git` directory. Remove `.git` directory because you might initialize your own git repository.
+
+> Here, `dest` is your destination directory in which the boilerplate code will be copied.
 
 # Instructions
-- `npm install` to install dependencies
-- `npm i -D babel-plugin-react` and `npm i -S react react-dom` to use React.js (also add entry `react` to `.babelrc` presets)
-- Execute command `npm run start` for running development server and preview
-- Execute command `npm run build` for creating distribution files
-- Tweak configuration inside `config` folder if necessary
+- Use `npm install` command to install dependencies.
+- Execute command `npm run start` to run webpack development server and top open preview in the browser.
+- Execute command `npm run build` to create plugin distribution files in the `dist` directory.
+- Tweak configuration inside `config` folder if necessary.
+- Configure plugin API using [**this**](https://webpack.js.org/configuration/output/) documentation.
+
+# React.js plugin development
+- Install **React preset** using `npm i -D @babel/preset-react` command.
+- Update `babel.config.js` file with this new preset. Follow [**these**](https://babeljs.io/docs/en/babel-preset-react) instructions.
+- Update `/\.js$/` with `/\.jsx?$/` inside `webpack.config.js` to compile JavaScript files with `.jsx` extensions.
+- Install React and ReactDOM using `npm i -S react react-dom` command.
