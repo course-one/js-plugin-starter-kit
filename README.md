@@ -3,7 +3,7 @@ VanillaJS (_pure JavaScript_) plugin starter with **Webpack 4** and **Babel 7**.
 
 # Clone this repository
 ```
-git clone  -b webpack-4-babel-7 https://github.com/thatisuday/js-plugin-starter.git [dest]
+git clone -b webpack-4-babel-7 https://github.com/thatisuday/js-plugin-starter.git [dest]
 ```
 
 > Here, `dest` is your destination directory in which the boilerplate code will be copied.
