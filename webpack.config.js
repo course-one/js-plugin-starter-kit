@@ -16,6 +16,7 @@ module.exports = {
     output: {
         library: 'UserList',
         libraryTarget: 'umd',
+        globalObject: 'this',
         libraryExport: 'default',
         path: path.resolve(__dirname, 'dist'),
         filename: 'index.js',
