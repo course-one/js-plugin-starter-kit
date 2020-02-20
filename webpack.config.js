@@ -16,7 +16,7 @@ module.exports = {
     output: {
         library: 'UserList',
         libraryTarget: 'umd',
-        globalObject: 'this',
+        globalObject: '(typeof self !== "undefined" ? self : this)',
         libraryExport: 'default',
         path: path.resolve(__dirname, 'dist'),
         filename: 'index.js',
