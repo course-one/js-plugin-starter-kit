@@ -1,4 +1,4 @@
-# js-plugin-starter
+# js-plugin-starter-kit
 VanillaJS (_pure JavaScript_) plugin starter with **Webpack 4** and **Babel 7**.
 
 # Clone this repository
